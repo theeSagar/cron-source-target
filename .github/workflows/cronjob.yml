@@ -25,9 +25,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Print env vars (debug)
-        POSTGRES_NAME: defaultdb
-          POSTGRES_USER: avnadmin
-          POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
-          POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
-          POSTGRES_PORT: 20900
+        env:
+            POSTGRES_NAME: defaultdb
+            POSTGRES_USER: avnadmin
+            POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
+            POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
+            POSTGRES_PORT: 20900
         run: python main.py
