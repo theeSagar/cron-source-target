@@ -28,6 +28,7 @@ cursor.execute("""
 
 # rows = cursor.fetchall()
 row = cursor.fetchone()
+print(row)
 
 # print(rows)
 # conn.commit()
