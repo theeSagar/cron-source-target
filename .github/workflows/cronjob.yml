@@ -4,7 +4,7 @@ name: Insert One Row Periodically
 
 on:
   schedule:
-    - cron: "*/1 * * * *"  # Every 1 minute (UTC)
+    - cron: "*/5 * * * *"  # Every 1 minute (UTC)
   workflow_dispatch:       # Allow manual trigger
 
 jobs:
