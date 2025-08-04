@@ -10,6 +10,7 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    environment: insert_source
 
     steps:
       - name: Checkout code
@@ -28,7 +29,7 @@ jobs:
         env:
             POSTGRES_NAME: defaultdb
             POSTGRES_USER: avnadmin
-            POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
+            POSTGRES_PASSWORD:  ${{ secrets.POSTGRES_PASSWORD }}
             POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
             POSTGRES_PORT: 20900
         run: python main.py
