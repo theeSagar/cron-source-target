@@ -1,0 +1,34 @@
+# .github/workflows/insert_row.yml
+
+name: Insert One Row Periodically
+
+on:
+  schedule:
+    - cron: "10 10 * * *"  # Every 1 minute (UTC)
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Print env vars (debug)
+        env:
+            POSTGRES_NAME: defaultdb
+            POSTGRES_USER: avnadmin
+            POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
+            POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
+            POSTGRES_PORT: 20900
+        run: python insert_source.py
