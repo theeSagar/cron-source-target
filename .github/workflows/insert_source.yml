@@ -6,11 +6,12 @@ on:
   schedule:
     - cron: "10 10 * * *"  # Every 1 minute (UTC)
   workflow_dispatch:       # Allow manual trigger
-  environment: insert_source
+  
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    environment: insert_source
 
     steps:
       - name: Checkout code
