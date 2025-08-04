@@ -1,6 +1,6 @@
 # .github/workflows/insert_row.yml
 
-name: Insert One Row Periodically
+name: Random insert in source table
 
 on:
   schedule:
