@@ -31,4 +31,4 @@ jobs:
             POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
             POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
             POSTGRES_PORT: 20900
-        run: python insert_source.py
+        run: python insert.py
