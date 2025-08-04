@@ -6,6 +6,7 @@ on:
   schedule:
     - cron: "10 10 * * *"  # Every 1 minute (UTC)
   workflow_dispatch:       # Allow manual trigger
+  environment: insert_source
 
 jobs:
   run-script:
@@ -28,7 +29,7 @@ jobs:
         env:
             POSTGRES_NAME: defaultdb
             POSTGRES_USER: avnadmin
-            POSTGRES_PASSWORD: AVNS_1h6ISjH-p8UrVb35Dhk
+            POSTGRES_PASSWORD:  ${{ secrets.POSTGRES_PASSWORD }}
             POSTGRES_HOST: postgres-foboxs-6fb2.d.aivencloud.com
             POSTGRES_PORT: 20900
         run: python insert_source.py
